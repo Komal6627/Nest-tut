@@ -1,5 +1,7 @@
 import { Injectable } from '@nestjs/common';
 import { Request } from 'express';
+import { CreateUserDto } from './dto/create-user-dto';
+import { UpdateUserDto } from './dto/update-user-dto';
 
 @Injectable()
 export class UserService {
@@ -10,21 +12,21 @@ export class UserService {
         return {name:"Komal ", city:"Pune"};
       }
 
-    create(body: any){
-        return body;
+    create(createUserDto: CreateUserDto){
+        return createUserDto;
     }
 
-    update(updateUserDto: {name:string, email:string},
-         param: { userId: number})
+    update(updateUserDto: UpdateUserDto,
+         userId: number)
          {
-            return {body: updateUserDto, param};
+            return {body: updateUserDto, userId};
         }
 
-    show(param: {userId: number}){
-        return param;
+    show(userId: number){
+        return {userId};
     }
-    delete(param: {userId: number}){
-        return param;
+    delete(userId: number){
+        return {userId};
     }
  }
 
