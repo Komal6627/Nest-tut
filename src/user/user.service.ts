@@ -1,5 +1,4 @@
 import { Injectable } from '@nestjs/common';
-import { Request } from 'express';
 import { CreateUserDto } from './dto/create-user-dto';
 import { UpdateUserDto } from './dto/update-user-dto';
 
@@ -9,7 +8,7 @@ export class UserService {
 //         return {name:"Komal", city:"Pune"};
 //       }
     get() {
-        return {name:"Komal ", city:"Pune"};
+        return {name:"Komal ", email:"komal@123"};
       }
 
     create(createUserDto: CreateUserDto){
